@@ -26,8 +26,6 @@ pub fn parse(
         const is_listen = std.mem.eql(u8, option, "--listen");
         const is_db = std.mem.eql(u8, option, "--db");
 
-        std.log.info("address: {s} {} {}", .{ option, is_listen, is_db });
-
         if (!is_listen and !is_db) return ParseError.UnknownOption;
 
         arg_index += 1;
@@ -37,8 +35,6 @@ pub fn parse(
 
         if (is_listen) {
             const colon_index = std.mem.indexOf(u8, option_value, ":") orelse return ParseError.InvalidListenAddress;
-
-            std.log.info("address: {s} {d}", .{ option_value[0..colon_index], colon_index });
 
             const host = option_value[0..colon_index];
             const port = std.fmt.parseInt(u16, option_value[colon_index + 1 ..], 10) catch return ParseError.InvalidListenAddress;

@@ -13,6 +13,15 @@ pub fn build(b: *std.Build) void {
         }),
     });
 
+    controller.root_module.link_libc = true;
+
+    const zqlite = b.dependency("zqlite", .{
+        .target = target,
+        .optimize = optimize,
+    });
+
+    controller.root_module.addImport("zqlite", zqlite.module("zqlite"));
+
     const dusty = b.dependency("dusty", .{
         .target = target,
         .optimize = optimize,

@@ -36,6 +36,10 @@
             .url = "git+https://github.com/lalinsky/dusty?ref=v0.5.0#48196c2d81f6cc54f6483b87f56cf808a9d7ba56",
             .hash = "dusty-0.5.0-Qdw7RuwFJAAvz4m-QiYLfUnjj0_91imaCApFQXcDyt1p",
         },
+        .zqlite = .{
+            .url = "git+https://github.com/karlseguin/zqlite.zig#865223b734a5113f731ab1eb1d7d81c8ac252913",
+            .hash = "zqlite-0.0.1-RWLaY4Y8nADz2l5aBE-JVyDyM3sZzHjq0agNykuVZKqQ",
+        },
     },
     .paths = .{
         "build.zig",
